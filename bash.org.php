@@ -7,7 +7,7 @@
  * bash.org fullfeed without ads
  */
 if (php_sapi_name() != "cli") {
-//	die("cli only");
+	die("cli only");
 }
 
 
