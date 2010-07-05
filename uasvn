@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# This script will update all SVN repositorys 
+# in the given workspace folder
+
+WORKSPACE='/home/user/workspace/'
+OPTIONS=''
+cd $WORKSPACE
+	for REPO in $( ls ) 
+		do
+			cd $REPO
+			svn update $OPTIONS
+			cd ..
+			echo "UPDATED $REPO"
+		done
+
