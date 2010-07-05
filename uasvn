@@ -10,7 +10,7 @@ cd $WORKSPACE
 		do
 			cd $REPO
 			svn update $OPTIONS
-			cd ..
 			echo "UPDATED $REPO"
+			cd ..
 		done
 
