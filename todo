@@ -1,0 +1,23 @@
+todo: 
+
+install
+    light gui (maybe openbox or xfce)
+    subsonic
+        --> prolly need some codecs for converting media
+    truecrypt
+    vim
+    ctags
+    screen
+    urt
+    fwbuilder
+    dnsmasq
+        --> configure as DHCP and dns server
+    set up iptables for nat/pat
+    git-core
+
+configuration
+    users
+        git, urt, personal
+    services': see above
+    make room in /media for backup and share folder
+
