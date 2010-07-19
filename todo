@@ -4,11 +4,15 @@ install
     light gui (maybe openbox or xfce)
     subsonic
         --> prolly need some codecs for converting media
+        --> check out if subsonic supports PAM 
+            this could be handy for user management
+            and uploaded files, concatination of music 
     truecrypt
     vim
     ctags
     screen
     urt
+    lighttpd
     fwbuilder
     dnsmasq
         --> configure as DHCP and dns server
@@ -17,7 +21,12 @@ install
 
 configuration
     users
-        git, urt, personal
+        git, urt, personal, some dudes and buddys
     services': see above
     make room in /media for backup and share folder
-
+    webserver for sharing files (/media/share)
+    maybe ftp access to those files
+    PAM
+    set up git reops with git users
+    configure gitweb
+    and git access to github (seperate repo / folder)
