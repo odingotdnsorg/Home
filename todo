@@ -1,5 +1,11 @@
 todo: 
 
+first things:
+    unplug 2nd HDD
+    install base system
+    edit fstab and grub menu 
+        -> set to HDD uuids
+    
 install
     light gui (maybe openbox or xfce)
     subsonic
