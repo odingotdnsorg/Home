@@ -28,7 +28,7 @@ install
 configuration
     users[DONE]
         git, urt, personal, some dudes and buddys
-    services': see above
+    services: see above
     make room in /media for backup and share folder[DONE]
     webserver for sharing files (/media/share)[DONE]
     maybe ftp access to those files
