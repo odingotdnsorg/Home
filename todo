@@ -1,38 +1,38 @@
 todo: 
 
-first things:
+first things: [DONE]
     unplug 2nd HDD
     install base system
     edit fstab and grub menu 
         -> set to HDD uuids
     
 install
-    light gui (maybe openbox or xfce)
+    light gui (maybe openbox or xfce)[DONE]
     subsonic
         --> prolly need some codecs for converting media
         --> check out if subsonic supports PAM 
             this could be handy for user management
             and uploaded files, concatination of music 
-    truecrypt
-    vim
-    ctags
-    screen
+    truecrypt[DONE]
+    vim[DONE]
+    ctags[DONE]
+    screen[DONE]
     urt
-    lighttpd
+    lighttpd[DONE]
     fwbuilder
-    dnsmasq
+    dnsmasq[DONE]
         --> configure as DHCP and dns server
     set up iptables for nat/pat
-    git-core
+    git-core[DONE]
 
 configuration
-    users
+    users[DONE]
         git, urt, personal, some dudes and buddys
-    services': see above
-    make room in /media for backup and share folder
-    webserver for sharing files (/media/share)
+    services: see above
+    make room in /media for backup and share folder[DONE]
+    webserver for sharing files (/media/share)[DONE]
     maybe ftp access to those files
-    PAM
-    set up git reops with git users
-    configure gitweb
-    and git access to github (seperate repo / folder)
+    PAM [FAILED]
+    set up git reops with git users[DONE]
+    configure gitweb[DONE]
+    and git access to github (seperate repo / folder)[DONE]
