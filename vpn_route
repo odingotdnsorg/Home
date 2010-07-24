@@ -1,0 +1,9 @@
+echo "1" > /proc/sys/net/ipv4/ip_forward
+iptables -F INPUT
+iptables -F OUTPUT
+iptables -F FORWARD
+iptables -F -t nat
+iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
+iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+iptables -A INPUT -i tun0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
