@@ -15,16 +15,52 @@ $value = "http://www.br-online.de/br-alpha/alpha-centauri/" . $value;
 }
 // $links enthält nun alle links zu den Popups der Sendungen
 foreach ($links as $link => $url){
-	$dllink = get_video_link($url);
-echo $dllink . "\n";
+	$videos[] = get_video_link($url);
 }
+
+//$videos = array_unique($videos);
+#print_r($videos);
+
+
+foreach ($videos as $video) {
+    //dateiname erzeugen und video herunterladen, danach in die datei schreiben
+    
+    $filename = $video['datum'] . "-" . $video['titel'] . ".wmv";
+    $content = file_get_contents($video['link']);
+        if (!$handle = fopen($filename, "w+")) {
+            print "Kann die Datei $filename nicht öffnen";
+        
+        }    
+        fwrite($handle, $content);
+        echo $filename . " wurde erfolgreich gespeichert." . "\n";
+
+
+}
+
 
 // Funtionen die Links aus den br alpha seiten ziehen
 function get_video_link($url){
 	$popup = file_get_contents($url);
 	$pattern = "|http://gffstream.vo.llnwd.net/(.*?)wmv|";
 	preg_match_all($pattern, $popup, $out);
-	return 	$out[0][3];
+	$link =	$out[0][3];
+    
+    //Datum:
+    $pattern = '$div class="date">(.*?)<\/div>.*?$is';
+	preg_match_all($pattern, $popup, $out);
+    $date = trim(strip_tags($out[1][0]));
+    $date = date("Y-m-d",strtotime($date));
+    
+    // Titel: 
+    $pattern = '$<em>alpha-Centauri<\/em>(.*?)<\/h3>$is';
+	preg_match_all($pattern, $popup, $out);
+    $titel = utf8_encode(str_replace('?','',str_replace(' ','_',trim(strip_tags($out[1][0])))));
+    
+    // Umlaute raus:
+    $pat = array("Ö","Ä","Ü","ö","ä","ü");
+    $repl = array("Oe", "Ae", "Ue", "oe", "ae", "ue");
+    $titel = str_replace($pat, $repl, $titel);
+    return array("titel" => $titel, "datum" => $date, "link" => $link);
 }
 
 
